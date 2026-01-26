@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - CBT Pro System</title>
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/common.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Admin Header -->
+  <header class="admin-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="header-left">
+          <i data-lucide="shield" class="icon-md"></i>
+          <div>
+            <h2>CBT Admin Portal</h2>
+            <p id="adminName">Administrator</p>
+          </div>
+        </div>
+        
+        <button class="btn btn-secondary" id="logoutBtn">
+          <i data-lucide="log-out" class="icon-sm"></i>
+          Logout
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dashboard Content -->
+  <div class="dashboard-container">
+    <div class="container">
+      <!-- Page Title -->
+      <div class="page-header">
+        <h1>
+          <i data-lucide="layout-dashboard" class="icon-lg"></i>
+          Dashboard
+        </h1>
+        <p>Overview of your CBT system</p>
+      </div>
+      
+      <!-- Stats Grid -->
+      <div class="stats-grid grid grid-cols-3">
+        <div class="stat-card">
+          <div class="stat-icon primary">
+            <i data-lucide="book-open"></i>
+          </div>
+          <div class="stat-content">
+            <div class="stat-value" id="totalExams">0</div>
+            <div class="stat-label">Total Exams</div>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon success">
+            <i data-lucide="users"></i>
+          </div>
+          <div class="stat-content">
+            <div class="stat-value" id="totalCandidates">0</div>
+            <div class="stat-label">Total Candidates</div>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon warning">
+            <i data-lucide="file-question"></i>
+          </div>
+          <div class="stat-content">
+            <div class="stat-value" id="totalQuestions">0</div>
+            <div class="stat-label">Total Questions</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Management Cards -->
+      <div class="management-section">
+        <h2>
+          <i data-lucide="settings" class="icon-sm"></i>
+          Management Tools
+        </h2>
+        
+        <div class="management-grid grid grid-cols-2">
+          <a href="../management/index.html?tab=questions" class="management-card card">
+            <div class="card-icon">
+              <i data-lucide="clipboard-list"></i>
+            </div>
+            <h3>Manage Questions</h3>
+            <p>Add, edit, or delete exam questions</p>
+            <div class="card-action">
+              <span>Go to Questions</span>
+              <i data-lucide="arrow-right" class="icon-xs"></i>
+            </div>
+          </a>
+          
+          <a href="../management/index.html?tab=results" class="management-card card">
+            <div class="card-icon">
+              <i data-lucide="bar-chart"></i>
+            </div>
+            <h3>View Results</h3>
+            <p>View and export candidate exam results</p>
+            <div class="card-action">
+              <span>Go to Results</span>
+              <i data-lucide="arrow-right" class="icon-xs"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Recent Activity -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <i data-lucide="activity" class="icon-sm"></i>
+            Recent Activity
+          </h3>
+        </div>
+        
+        <div class="table-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Candidate</th>
+                <th>Exam</th>
+                <th>Score</th>
+                <th>Status</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody id="recentActivity">
+              <tr>
+                <td colspan="5" class="text-center text-gray">No recent activity</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../shared/js/storage.js"></script>
+  <script src="../../shared/js/utils.js"></script>
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

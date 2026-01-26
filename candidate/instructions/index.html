@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Instructions - CBT Pro System</title>
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/common.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="instructions-container">
+    <div class="container">
+      <div class="instructions-card card">
+        <!-- Header -->
+        <div class="card-header">
+          <div class="flex-between">
+            <div>
+              <h1 class="card-title" id="examName">Exam Instructions</h1>
+              <p class="card-description">Please read carefully before starting</p>
+            </div>
+            <div class="exam-badge">
+              <i data-lucide="clipboard-list" class="icon-md"></i>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Exam Details -->
+        <div class="exam-details grid grid-cols-3">
+          <div class="detail-card">
+            <i data-lucide="clock" class="detail-icon"></i>
+            <div class="detail-label">Duration</div>
+            <div class="detail-value" id="duration">30 minutes</div>
+          </div>
+          
+          <div class="detail-card">
+            <i data-lucide="file-question" class="detail-icon"></i>
+            <div class="detail-label">Total Questions</div>
+            <div class="detail-value" id="totalQuestions">10</div>
+          </div>
+          
+          <div class="detail-card">
+            <i data-lucide="target" class="detail-icon"></i>
+            <div class="detail-label">Passing Score</div>
+            <div class="detail-value" id="passingScore">60%</div>
+          </div>
+        </div>
+        
+        <!-- Instructions List -->
+        <div class="instructions-section">
+          <h3>
+            <i data-lucide="info" class="icon-sm"></i>
+            Instructions
+          </h3>
+          <ol id="instructionsList" class="instructions-list">
+            <!-- Instructions will be loaded dynamically -->
+          </ol>
+        </div>
+        
+        <!-- Terms and Conditions -->
+        <div class="terms-section">
+          <label class="form-checkbox">
+            <input type="checkbox" id="acceptTerms">
+            <span>
+              I have read and understood all the instructions. I agree to the terms and conditions 
+              and am ready to begin the exam.
+            </span>
+          </label>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="flex-between gap-md">
+          <button class="btn btn-secondary" onclick="history.back()">
+            <i data-lucide="arrow-left" class="icon-sm"></i>
+            Back
+          </button>
+          
+          <button id="beginBtn" class="btn btn-success btn-lg" disabled>
+            <i data-lucide="play-circle" class="icon-sm"></i>
+            Begin Exam
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../shared/js/storage.js"></script>
+  <script src="../../shared/js/utils.js"></script>
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

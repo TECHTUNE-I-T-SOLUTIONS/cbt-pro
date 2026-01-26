@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Management - CBT Pro System</title>
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/common.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Admin Header -->
+  <header class="admin-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="header-left">
+          <a href="../dashboard/index.html" class="back-btn">
+            <i data-lucide="arrow-left" class="icon-sm"></i>
+          </a>
+          <div>
+            <h2>Management Portal</h2>
+            <p>Questions & Results</p>
+          </div>
+        </div>
+        
+        <button class="btn btn-secondary" id="logoutBtn">
+          <i data-lucide="log-out" class="icon-sm"></i>
+          Logout
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Management Content -->
+  <div class="management-container">
+    <div class="container">
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab active" data-tab="questions">
+          <i data-lucide="clipboard-list" class="icon-sm"></i>
+          Questions
+        </button>
+        <button class="tab" data-tab="results">
+          <i data-lucide="bar-chart" class="icon-sm"></i>
+          Results
+        </button>
+      </div>
+      
+      <!-- Questions Panel -->
+      <div id="questionsPanel" class="tab-panel active">
+        <!-- Add Question Button -->
+        <div class="panel-header">
+          <h2>
+            <i data-lucide="clipboard-list" class="icon-md"></i>
+            Question Management
+          </h2>
+          <button class="btn btn-primary" id="addQuestionBtn">
+            <i data-lucide="plus" class="icon-sm"></i>
+            Add Question
+          </button>
+        </div>
+        
+        <!-- Questions Table -->
+        <div class="card">
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th style="width: 50px;">#</th>
+                  <th>Question</th>
+                  <th style="width: 120px;">Correct Answer</th>
+                  <th style="width: 150px;">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="questionsTable">
+                <tr>
+                  <td colspan="4" class="text-center">Loading questions...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Results Panel -->
+      <div id="resultsPanel" class="tab-panel">
+        <!-- Export Buttons -->
+        <div class="panel-header">
+          <h2>
+            <i data-lucide="bar-chart" class="icon-md"></i>
+            Exam Results
+          </h2>
+          <div class="flex gap-md">
+            <button class="btn btn-secondary" id="exportCSVBtn">
+              <i data-lucide="file-spreadsheet" class="icon-sm"></i>
+              Export CSV
+            </button>
+            <button class="btn btn-secondary" id="exportPDFBtn">
+              <i data-lucide="file-text" class="icon-sm"></i>
+              Export PDF
+            </button>
+          </div>
+        </div>
+        
+        <!-- Results Table -->
+        <div class="card">
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Candidate Name</th>
+                  <th>Exam</th>
+                  <th style="width: 120px;">Score</th>
+                  <th style="width: 100px;">Status</th>
+                  <th style="width: 150px;">Date</th>
+                  <th style="width: 120px;">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="resultsTable">
+                <tr>
+                  <td colspan="6" class="text-center">Loading results...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add/Edit Question Modal -->
+  <div id="questionModal" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Add Question</h3>
+      </div>
+      
+      <form id="questionForm">
+        <input type="hidden" id="questionId">
+        
+        <div class="form-group">
+          <label for="questionText" class="form-label">Question Text</label>
+          <textarea 
+            id="questionText" 
+            class="form-textarea" 
+            placeholder="Enter your question..."
+            required
+          ></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="optionA" class="form-label">Option A</label>
+          <input 
+            type="text" 
+            id="optionA" 
+            class="form-input" 
+            placeholder="Enter option A"
+            required
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="optionB" class="form-label">Option B</label>
+          <input 
+            type="text" 
+            id="optionB" 
+            class="form-input" 
+            placeholder="Enter option B"
+            required
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="optionC" class="form-label">Option C</label>
+          <input 
+            type="text" 
+            id="optionC" 
+            class="form-input" 
+            placeholder="Enter option C"
+            required
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="optionD" class="form-label">Option D</label>
+          <input 
+            type="text" 
+            id="optionD" 
+            class="form-input" 
+            placeholder="Enter option D"
+            required
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="correctAnswer" class="form-label">Correct Answer</label>
+          <select id="correctAnswer" class="form-select" required>
+            <option value="">Select correct option</option>
+            <option value="A">Option A</option>
+            <option value="B">Option B</option>
+            <option value="C">Option C</option>
+            <option value="D">Option D</option>
+          </select>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary">
+            <i data-lucide="save" class="icon-sm"></i>
+            Save Question
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../../shared/js/storage.js"></script>
+  <script src="../../shared/js/utils.js"></script>
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

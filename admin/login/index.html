@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - CBT Pro System</title>
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/common.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="login-container">
+    <div class="container">
+      <div class="login-card">
+        <!-- Back Button -->
+        <a href="../../candidate/home/index.html" class="back-link">
+          <i data-lucide="arrow-left" class="icon-sm"></i>
+          Back to Home
+        </a>
+        
+        <!-- Header -->
+        <div class="login-header">
+          <div class="login-icon admin">
+            <i data-lucide="shield" class="icon-lg"></i>
+          </div>
+          <h1>Admin Login</h1>
+          <p>Secure access to the management portal</p>
+        </div>
+        
+        <!-- Login Form -->
+        <form id="loginForm" class="login-form">
+          <div class="form-group">
+            <label for="username" class="form-label">
+              <i data-lucide="user" class="icon-xs"></i>
+              Username
+            </label>
+            <input 
+              type="text" 
+              id="username" 
+              class="form-input" 
+              placeholder="Enter admin username"
+              required
+              autocomplete="username"
+            >
+            <span id="usernameError" class="form-error" style="display: none;"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="password" class="form-label">
+              <i data-lucide="lock" class="icon-xs"></i>
+              Password
+            </label>
+            <input 
+              type="password" 
+              id="password" 
+              class="form-input" 
+              placeholder="Enter admin password"
+              required
+              autocomplete="current-password"
+            >
+            <span id="passwordError" class="form-error" style="display: none;"></span>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+            <i data-lucide="log-in" class="icon-sm"></i>
+            Login to Dashboard
+          </button>
+        </form>
+        
+        <!-- Signup Link -->
+        <div class="login-link">
+          Don't have an admin account? <a href="../signup/index.html">Sign up here</a>
+        </div>
+        
+        <!-- Info Alert -->
+        <div class="info-box">
+          <i data-lucide="info" class="icon-sm"></i>
+          <div>
+            <strong>Demo Credentials:</strong><br>
+            Username: <code>admin</code><br>
+            Password: <code>admin123</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../shared/js/storage.js"></script>
+  <script src="../../shared/js/utils.js"></script>
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

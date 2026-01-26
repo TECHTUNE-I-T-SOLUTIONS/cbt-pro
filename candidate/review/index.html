@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Answers - CBT Pro System</title>
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/common.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="review-header">
+    <div class="container">
+      <div class="header-content">
+        <h1>
+          <i data-lucide="clipboard-check" class="icon-sm"></i>
+          Review Your Answers
+        </h1>
+        <div class="timer-display" id="timerDisplay">
+          <i data-lucide="clock" class="icon-sm"></i>
+          <span id="timer">00:00</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Review Container -->
+  <div class="review-container">
+    <div class="container">
+      <!-- Summary Cards -->
+      <div class="summary-cards grid grid-cols-3">
+        <div class="summary-card">
+          <div class="summary-icon success">
+            <i data-lucide="check-circle"></i>
+          </div>
+          <div class="summary-value" id="answeredCount">0</div>
+          <div class="summary-label">Answered</div>
+        </div>
+        
+        <div class="summary-card">
+          <div class="summary-icon warning">
+            <i data-lucide="bookmark"></i>
+          </div>
+          <div class="summary-value" id="markedCount">0</div>
+          <div class="summary-label">Marked for Review</div>
+        </div>
+        
+        <div class="summary-card">
+          <div class="summary-icon error">
+            <i data-lucide="circle-alert"></i>
+          </div>
+          <div class="summary-value" id="unansweredCount">0</div>
+          <div class="summary-label">Not Answered</div>
+        </div>
+      </div>
+      
+      <!-- Question Grid -->
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title">All Questions</h2>
+          <p class="card-description">Click on any question to review or change your answer</p>
+        </div>
+        
+        <div class="questions-grid" id="questionsGrid">
+          <!-- Question items will be loaded dynamically -->
+        </div>
+      </div>
+      
+      <!-- Actions -->
+      <div class="review-actions">
+        <button class="btn btn-secondary btn-lg" onclick="history.back()">
+          <i data-lucide="arrow-left" class="icon-sm"></i>
+          Back to Exam
+        </button>
+        
+        <button id="submitBtn" class="btn btn-success btn-lg">
+          <i data-lucide="send" class="icon-sm"></i>
+          Submit Exam
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../shared/js/storage.js"></script>
+  <script src="../../shared/js/utils.js"></script>
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

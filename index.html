@@ -2,83 +2,146 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CBT System | Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CBT Pro System - Computer-Based Testing Platform">
+  <title>CBT Pro System | Welcome</title>
+  <link rel="stylesheet" href="shared/css/variables.css">
+  <link rel="stylesheet" href="shared/css/common.css">
+  <style>
+    .splash-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      padding: 2rem;
+    }
+    
+    .splash-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 3rem 2rem;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 0.6s ease;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .splash-icon {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      font-size: 3.5rem;
+    }
+    
+    .splash-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #1f2937;
+      margin-bottom: 0.5rem;
+    }
+    
+    .splash-subtitle {
+      font-size: 1.125rem;
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+    
+    .splash-description {
+      font-size: 0.9375rem;
+      color: #6b7280;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      padding: 0 1rem;
+    }
+    
+    .splash-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .portal-label {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+      .splash-card {
+        padding: 2rem 1.5rem;
+      }
+      
+      .splash-title {
+        font-size: 2rem;
+      }
+      
+      .splash-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-
-<body style="
-  margin: 0;
-  height: 100vh;
-  background-color: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: system-ui, sans-serif;
-">
-
-  <!-- Center Card -->
-  <div style="
-    background-color: #111;
-    color: #f1f1f1;
-    width: 90%;
-    max-width: 600px;
-    padding: 32px;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.6);
-  ">
-
-    <h1 style="
-      margin-bottom: 16px;
-      font-size: 26px;
-    ">
-      Computer-Based Test (CBT) System
-    </h1>
-
-    <p style="
-      font-size: 14px;
-      line-height: 1.7;
-      color: #ccc;
-      margin-bottom: 12px;
-    ">
-      This software project is designed to implement a Computer-Based
-      Test (CBT) system that enables examinations to be conducted
-      electronically in a secure, efficient, and standardized manner.
-    </p>
-
-    <p style="
-      font-size: 14px;
-      line-height: 1.7;
-      color: #ccc;
-      margin-bottom: 12px;
-    ">
-      The system supports candidate authentication, controlled exam
-      sessions, automated timing, and digital assessment to ensure
-      fairness, accuracy, and transparency in the examination process.
-    </p>
-
-    <p style="
-      font-size: 13px;
-      color: #999;
-      margin-bottom: 24px;
-    ">
-      Developed as a modern examination solution for academic and
-      professional testing environments.
-    </p>
-
-    <a href="login.html" style="
-      display: inline-block;
-      padding: 12px 28px;
-      background-color: #6d5dfc;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: 500;
-    ">
-      Start Examination
-    </a>
-
+<body>
+  <div class="splash-container">
+    <div class="splash-card">
+      <div class="splash-icon">
+        📚
+      </div>
+      
+      <h1 class="splash-title">CBT Pro System</h1>
+      <p class="splash-subtitle">Computer-Based Testing Platform</p>
+      
+      <p class="splash-description">
+        This system enables examinations to be conducted electronically in a secure, efficient, 
+        and standardized manner. It supports candidate authentication, controlled exam sessions, 
+        automated timing, and digital assessment to ensure fairness, accuracy, and transparency 
+        in the examination process.
+      </p>
+      
+      <div class="portal-label">Choose Portal</div>
+      
+      <div class="splash-buttons">
+        <a href="candidate/home/index.html" class="btn btn-primary btn-lg">
+          <i data-lucide="user" style="width: 20px; height: 20px;"></i>
+          Candidate Portal - Take Exam
+        </a>
+        
+        <a href="admin/login/index.html" class="btn btn-outline btn-lg">
+          <i data-lucide="shield" style="width: 20px; height: 20px;"></i>
+          Admin Portal - Manage System
+        </a>
+      </div>
+    </div>
   </div>
 
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
 </body>
 </html>

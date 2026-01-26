@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidate Profile - CBT Pro System</title>
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/common.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="profile-container">
+    <div class="container">
+      <div class="profile-card card">
+        <!-- Header -->
+        <div class="card-header">
+          <h1 class="card-title">
+            <i data-lucide="user-check" class="icon-sm"></i>
+            Confirm Your Identity
+          </h1>
+          <p class="card-description">Please verify your details before proceeding to the exam</p>
+        </div>
+        
+        <!-- Profile Details -->
+        <div class="profile-details">
+          <div class="profile-avatar">
+            <i data-lucide="user" class="avatar-icon"></i>
+          </div>
+          
+          <div class="details-grid">
+            <div class="detail-item">
+              <div class="detail-label">
+                <i data-lucide="user" class="icon-xs"></i>
+                Candidate Name
+              </div>
+              <div class="detail-value" id="candidateName">-</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label">
+                <i data-lucide="hash" class="icon-xs"></i>
+                Exam Number
+              </div>
+              <div class="detail-value" id="examNumber">-</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label">
+                <i data-lucide="book-open" class="icon-xs"></i>
+                Exam Name
+              </div>
+              <div class="detail-value" id="examName">-</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label">
+                <i data-lucide="calendar" class="icon-xs"></i>
+                Date
+              </div>
+              <div class="detail-value" id="examDate">-</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label">
+                <i data-lucide="clock" class="icon-xs"></i>
+                Duration
+              </div>
+              <div class="detail-value" id="duration">-</div>
+            </div>
+            
+            <div class="detail-item">
+              <div class="detail-label">
+                <i data-lucide="list" class="icon-xs"></i>
+                Total Questions
+              </div>
+              <div class="detail-value" id="totalQuestions">-</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Warning Box -->
+        <div class="warning-box">
+          <i data-lucide="alert-circle" class="icon-sm"></i>
+          <div>
+            <strong>Important:</strong> Once you proceed, the exam timer will start. 
+            Ensure you have a stable internet connection and won't be interrupted.
+          </div>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="flex-between gap-md">
+          <button class="btn btn-secondary" onclick="history.back()">
+            <i data-lucide="arrow-left" class="icon-sm"></i>
+            Back
+          </button>
+          
+          <button id="proceedBtn" class="btn btn-success btn-lg">
+            <i data-lucide="arrow-right" class="icon-sm"></i>
+            Confirm & Start Exam
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../shared/js/storage.js"></script>
+  <script src="../../shared/js/utils.js"></script>
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

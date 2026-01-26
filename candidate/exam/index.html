@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam - CBT Pro System</title>
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/common.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Exam Header -->
+  <header class="exam-header">
+    <div class="container">
+      <div class="header-content">
+        <div class="exam-info">
+          <h2 id="examName">Exam</h2>
+          <span id="candidateName" class="candidate-badge"></span>
+        </div>
+        
+        <div class="timer-display" id="timerDisplay">
+          <i data-lucide="clock" class="icon-sm"></i>
+          <span id="timer">00:00</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Exam Area -->
+  <div class="exam-container">
+    <div class="container">
+      <div class="exam-layout">
+        <!-- Question Panel -->
+        <div class="question-panel">
+          <div class="card">
+            <!-- Question Header -->
+            <div class="question-header">
+              <div class="question-number">
+                Question <span id="currentQuestionNum">1</span> of <span id="totalQuestions">10</span>
+              </div>
+              <button id="markReviewBtn" class="btn btn-sm btn-outline">
+                <i data-lucide="bookmark" class="icon-xs"></i>
+                Mark for Review
+              </button>
+            </div>
+            
+            <!-- Question Text -->
+            <div class="question-content">
+              <h3 id="questionText">Question text will appear here...</h3>
+            </div>
+            
+            <!-- Options -->
+            <div class="options-container" id="optionsContainer">
+              <!-- Options will be loaded dynamically -->
+            </div>
+            
+            <!-- Navigation Buttons -->
+            <div class="question-footer">
+              <div class="flex gap-md">
+                <button id="prevBtn" class="btn btn-secondary">
+                  <i data-lucide="arrow-left" class="icon-xs"></i>
+                  Previous
+                </button>
+                
+                <button id="clearBtn" class="btn btn-secondary">
+                  <i data-lucide="x-circle" class="icon-xs"></i>
+                  Clear
+                </button>
+              </div>
+              
+              <button id="nextBtn" class="btn btn-primary">
+                Next
+                <i data-lucide="arrow-right" class="icon-xs"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Question Palette -->
+        <div class="palette-panel">
+          <div class="card">
+            <h4>
+              <i data-lucide="grid-3x3" class="icon-xs"></i>
+              Question Palette
+            </h4>
+            
+            <div class="palette-legend">
+              <div class="legend-item">
+                <span class="legend-box answered"></span>
+                <span>Answered</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-box marked"></span>
+                <span>Marked</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-box unanswered"></span>
+                <span>Not Answered</span>
+              </div>
+            </div>
+            
+            <div class="palette-grid" id="paletteGrid">
+              <!-- Question numbers will be loaded dynamically -->
+            </div>
+            
+            <button id="reviewBtn" class="btn btn-success" style="width: 100%; margin-top: var(--spacing-lg);">
+              <i data-lucide="clipboard-check" class="icon-xs"></i>
+              Review Answers
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../shared/js/storage.js"></script>
+  <script src="../../shared/js/utils.js"></script>
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

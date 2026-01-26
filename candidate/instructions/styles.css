@@ -1,0 +1,164 @@
+/* Instructions Page Styles */
+
+.instructions-container {
+  min-height: 100vh;
+  padding: var(--spacing-2xl) 0;
+  background: var(--color-gray-50);
+}
+
+.instructions-card {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.exam-badge {
+  background: var(--color-primary-light);
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-md {
+  width: 32px;
+  height: 32px;
+  color: var(--color-primary);
+  stroke-width: 2;
+}
+
+.icon-sm {
+  width: 20px;
+  height: 20px;
+}
+
+.exam-details {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.detail-card {
+  text-align: center;
+  padding: var(--spacing-lg);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-gray-200);
+}
+
+.detail-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-primary);
+  margin: 0 auto var(--spacing-sm);
+  stroke-width: 1.5;
+}
+
+.detail-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detail-value {
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-900);
+  font-weight: var(--font-weight-bold);
+}
+
+.instructions-section {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.instructions-section h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-900);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--color-gray-200);
+}
+
+.instructions-list {
+  list-style: none;
+  counter-reset: instruction-counter;
+  padding: 0;
+}
+
+.instructions-list li {
+  counter-increment: instruction-counter;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  background: var(--color-gray-50);
+  border-left: 4px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  position: relative;
+  padding-left: 3.5rem;
+}
+
+.instructions-list li::before {
+  content: counter(instruction-counter);
+  position: absolute;
+  left: var(--spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+}
+
+.terms-section {
+  padding: var(--spacing-lg);
+  background: var(--color-warning-light);
+  border: 2px solid var(--color-warning);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.terms-section label {
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.terms-section input[type="checkbox"] {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .instructions-container {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .exam-badge {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .icon-md {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .detail-card {
+    padding: var(--spacing-md);
+  }
+  
+  .detail-value {
+    font-size: var(--font-size-lg);
+  }
+}

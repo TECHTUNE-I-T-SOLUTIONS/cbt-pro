@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submitting Exam - CBT Pro System</title>
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/common.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="submit-container">
+    <div class="container">
+      <div class="submit-card card">
+        <div id="loadingState" class="loading-state">
+          <div class="loader"></div>
+          <h2>Submitting Your Exam</h2>
+          <p>Please wait while we process your answers...</p>
+          <div class="progress-steps">
+            <div class="step active">
+              <i data-lucide="check" class="step-icon"></i>
+              <span>Validating answers</span>
+            </div>
+            <div class="step" id="step2">
+              <i data-lucide="check" class="step-icon"></i>
+              <span>Calculating score</span>
+            </div>
+            <div class="step" id="step3">
+              <i data-lucide="check" class="step-icon"></i>
+              <span>Saving results</span>
+            </div>
+          </div>
+        </div>
+        
+        <div id="successState" class="success-state hidden">
+          <div class="success-icon">
+            <i data-lucide="check-circle"></i>
+          </div>
+          <h2>Exam Submitted Successfully!</h2>
+          <p>Your answers have been recorded and your results are ready.</p>
+          <button class="btn btn-primary btn-lg" id="viewResultsBtn">
+            <i data-lucide="award" class="icon-sm"></i>
+            View Results
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../shared/js/storage.js"></script>
+  <script src="../../shared/js/utils.js"></script>
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

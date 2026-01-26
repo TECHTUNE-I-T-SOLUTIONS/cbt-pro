@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Results - CBT Pro System</title>
+  <link rel="stylesheet" href="../../shared/css/variables.css">
+  <link rel="stylesheet" href="../../shared/css/common.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="result-container">
+    <div class="container">
+      <div class="result-card card">
+        <!-- Header -->
+        <div class="result-header">
+          <h1>
+            <i data-lucide="award" class="icon-md"></i>
+            Exam Results
+          </h1>
+        </div>
+        
+        <!-- Main Score Display -->
+        <div class="score-display">
+          <div class="score-circle">
+            <svg class="progress-ring" width="200" height="200">
+              <circle class="progress-ring-bg" cx="100" cy="100" r="90" />
+              <circle id="progressCircle" class="progress-ring-fill" cx="100" cy="100" r="90" />
+            </svg>
+            <div class="score-content">
+              <div class="score-value" id="percentage">0%</div>
+              <div class="score-label">Score</div>
+            </div>
+          </div>
+          
+          <div class="status-badge" id="statusBadge">
+            <i data-lucide="trophy" class="icon-sm"></i>
+            <span id="status">-</span>
+          </div>
+        </div>
+        
+        <!-- Result Details -->
+        <div class="result-details grid grid-cols-2">
+          <div class="detail-card">
+            <div class="detail-icon success">
+              <i data-lucide="check-circle"></i>
+            </div>
+            <div class="detail-value" id="correctAnswers">0</div>
+            <div class="detail-label">Correct Answers</div>
+          </div>
+          
+          <div class="detail-card">
+            <div class="detail-icon error">
+              <i data-lucide="x-circle"></i>
+            </div>
+            <div class="detail-value" id="wrongAnswers">0</div>
+            <div class="detail-label">Wrong Answers</div>
+          </div>
+          
+          <div class="detail-card">
+            <div class="detail-icon warning">
+              <i data-lucide="circle-alert"></i>
+            </div>
+            <div class="detail-value" id="unanswered">0</div>
+            <div class="detail-label">Unanswered</div>
+          </div>
+          
+          <div class="detail-card">
+            <div class="detail-icon info">
+              <i data-lucide="clock"></i>
+            </div>
+            <div class="detail-value" id="timeTaken">0 min</div>
+            <div class="detail-label">Time Taken</div>
+          </div>
+        </div>
+        
+        <!-- Candidate Info -->
+        <div class="candidate-info">
+          <div class="info-row">
+            <span class="info-label">Candidate Name:</span>
+            <span class="info-value" id="candidateName">-</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Exam Name:</span>
+            <span class="info-value" id="examName">-</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Date Taken:</span>
+            <span class="info-value" id="dateTaken">-</span>
+          </div>
+        </div>
+        
+        <!-- Actions -->
+        <div class="result-actions">
+          <button class="btn btn-primary btn-lg" id="logoutBtn">
+            <i data-lucide="log-out" class="icon-sm"></i>
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../shared/js/storage.js"></script>
+  <script src="../../shared/js/utils.js"></script>
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
