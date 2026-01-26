@@ -108,7 +108,7 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
 function showSuccessModal(name, username) {
   const modalHTML = `
     <div class="modal-overlay" id="successModal">
-      <div class="modal-content" style="max-width: 500px;">
+      <div class="modal" style="max-width: 500px;">
         <div style="text-align: center; padding: 1rem;">
           <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #d1fae5 0%, #10b981 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem;">
             ✓
