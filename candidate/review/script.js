@@ -1,10 +1,10 @@
-// Review Page Script
+// The review Page Script
 
 let session = getCurrentSession();
 let questions = [];
 let timer = null;
 
-// Check if user is logged in
+// Check if the user is logged in - we fetch this from the session, if it were a react project, we could have used an api to get the session details
 if (!session || !session.examStartTime) {
   showAlert('Please complete the exam process first', 'error');
   setTimeout(() => navigateTo('../login/index.html'), 1500);
@@ -13,24 +13,24 @@ if (!session || !session.examStartTime) {
 }
 
 function initializeReview() {
-  // Load questions
+  // We can load questions here
   questions = getQuestionsByExamId(session.examId);
   
-  // Start timer
+  // Timer starts here
   const exam = getExamById(session.examId);
   startTimer(exam.duration);
   
-  // Calculate statistics
+  // To calculate the statistics
   const answered = Object.keys(session.answers || {}).length;
   const marked = (session.markedForReview || []).length;
   const unanswered = questions.length - answered;
   
-  // Update summary cards
+  // We'll update the summary cards here
   document.getElementById('answeredCount').textContent = answered;
   document.getElementById('markedCount').textContent = marked;
   document.getElementById('unansweredCount').textContent = unanswered;
   
-  // Build questions grid
+  // We build questions grid
   buildQuestionsGrid();
 }
 
@@ -98,7 +98,7 @@ function buildQuestionsGrid() {
     `;
     
     item.addEventListener('click', () => {
-      // Save current question index and go back to exam
+      // We can save the current question index and go back to exam
       session.currentQuestion = index;
       saveCurrentSession(session);
       navigateTo('../exam/index.html');
@@ -107,11 +107,11 @@ function buildQuestionsGrid() {
     grid.appendChild(item);
   });
   
-  // Reinitialize icons
+  // This is to reinitialize icons
   lucide.createIcons();
 }
 
-// Submit exam
+// Submit exam button
 document.getElementById('submitBtn').addEventListener('click', () => {
   const answered = Object.keys(session.answers || {}).length;
   const unanswered = questions.length - answered;
@@ -133,14 +133,14 @@ document.getElementById('submitBtn').addEventListener('click', () => {
 });
 
 function autoSubmitExam() {
-  showAlert('Time is up! Submitting your exam...', 'warning');
+  showAlert('Hey! Time is up! Automatically submitting your exam now...', 'warning');
   
   setTimeout(() => {
     navigateTo('../submit/index.html');
   }, 2000);
 }
 
-// Prevent accidental page closure
+// To prevent accidental page closure
 window.addEventListener('beforeunload', (e) => {
   e.preventDefault();
   e.returnValue = '';

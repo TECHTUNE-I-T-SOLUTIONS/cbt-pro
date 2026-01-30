@@ -2,7 +2,7 @@
 
 let session = getCurrentSession();
 
-// Check if user is logged in
+// To check if the user is logged in
 if (!session || !session.examStartTime) {
   showAlert('Invalid session', 'error');
   setTimeout(() => navigateTo('../login/index.html'), 1500);
@@ -11,7 +11,7 @@ if (!session || !session.examStartTime) {
 }
 
 function processSubmission() {
-  // Simulate processing steps
+  // We simulate processing steps here
   setTimeout(() => {
     document.getElementById('step2').classList.add('active');
   }, 1000);
@@ -39,7 +39,7 @@ function submitExam() {
   // Determine pass/fail
   const status = scoreData.percentage >= exam.passingScore ? 'Pass' : 'Fail';
   
-  // Create result object
+  // We create result object here
   const result = {
     id: generateId('result'),
     candidateId: session.candidateId,
@@ -55,23 +55,23 @@ function submitExam() {
     answers: scoreData.detailedResults
   };
   
-  // Save result
+  // Then, we save the result
   saveResult(result);
   
-  // Mark session as submitted
+  // To mark the session as submitted
   session.submitted = true;
   session.resultId = result.id;
   saveCurrentSession(session);
   
-  // Show success state
+  // To show the success state
   document.getElementById('loadingState').classList.add('hidden');
   document.getElementById('successState').classList.remove('hidden');
   
-  // Reinitialize icons
+  // We can reinitialize icons here
   lucide.createIcons();
 }
 
-// View results button
+// Then the view results button
 document.getElementById('viewResultsBtn').addEventListener('click', () => {
   navigateTo('../result/index.html');
 });
