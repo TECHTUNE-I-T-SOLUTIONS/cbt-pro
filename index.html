@@ -3,143 +3,604 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CBT Pro System - Computer-Based Testing Platform">
-  <title>CBT Pro System | Welcome</title>
+  <meta name="description" content="CBT Pro System - Computer-Based Testing Platform for secure and efficient examinations">
+  <title>CBT Pro System | Computer-Based Testing Platform</title>
   <link rel="stylesheet" href="shared/css/variables.css">
   <link rel="stylesheet" href="shared/css/common.css">
   <style>
-    .splash-container {
-      min-height: 100vh;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    /* ===== HEADER & NAVIGATION ===== */
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2563eb;
+      text-decoration: none;
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #4b5563;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
       background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-      padding: 2rem;
-    }
-    
-    .splash-card {
-      background: white;
-      border-radius: 1rem;
-      padding: 3rem 2rem;
-      max-width: 600px;
-      width: 100%;
+      color: white;
+      padding: 6rem 2rem;
       text-align: center;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-      animation: fadeInUp 0.6s ease;
     }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.75rem 2rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #2563eb;
+    }
+
+    .btn-primary:hover {
+      background: #f3f4f6;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 4rem 1.5rem;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        justify-content: center;
       }
     }
-    
-    .splash-icon {
-      width: 100px;
-      height: 100px;
+
+    /* ===== FEATURES SECTION ===== */
+    .features {
+      padding: 6rem 2rem;
+      background: #f9fafb;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #1f2937;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.125rem;
+      color: #6b7280;
+      margin-bottom: 4rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .features-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 0.75rem;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .feature-icon {
+      width: 80px;
+      height: 80px;
       background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 2rem;
-      font-size: 3.5rem;
-    }
-    
-    .splash-title {
+      margin: 0 auto 1.5rem;
       font-size: 2.5rem;
-      font-weight: bold;
+    }
+
+    .feature-card h3 {
+      font-size: 1.375rem;
+      margin-bottom: 0.75rem;
       color: #1f2937;
-      margin-bottom: 0.5rem;
     }
-    
-    .splash-subtitle {
-      font-size: 1.125rem;
-      color: #6b7280;
-      margin-bottom: 1rem;
-    }
-    
-    .splash-description {
-      font-size: 0.9375rem;
+
+    .feature-card p {
       color: #6b7280;
       line-height: 1.6;
-      margin-bottom: 2rem;
-      padding: 0 1rem;
     }
-    
-    .splash-buttons {
+
+    /* ===== HOW IT WORKS SECTION ===== */
+    .how-it-works {
+      padding: 6rem 2rem;
+    }
+
+    .steps-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .step {
+      position: relative;
+      padding: 2rem;
+      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+      border-radius: 0.75rem;
+      border-left: 4px solid #2563eb;
+    }
+
+    .step-number {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: #2563eb;
+      color: white;
+      border-radius: 50%;
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
     }
-    
-    .portal-label {
-      font-size: 0.75rem;
-      color: #9ca3af;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 600;
+
+    .step h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: #1f2937;
+    }
+
+    .step p {
+      color: #6b7280;
+    }
+
+    /* ===== PORTAL SECTION ===== */
+    .portals {
+      padding: 6rem 2rem;
+      background: #f9fafb;
+    }
+
+    .portals-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 3rem;
+    }
+
+    .portal-card {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+      transition: all 0.3s ease;
+    }
+
+    .portal-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .portal-header {
+      padding: 2.5rem 2rem;
+      background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .portal-header .icon {
+      font-size: 3rem;
       margin-bottom: 1rem;
     }
-    
+
+    .portal-header h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .portal-header p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .portal-body {
+      padding: 2rem;
+    }
+
+    .portal-body ul {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .portal-body li {
+      padding: 0.75rem 0;
+      padding-left: 1.75rem;
+      position: relative;
+      color: #6b7280;
+    }
+
+    .portal-body li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+
+    .portal-cta {
+      display: block;
+      text-align: center;
+      padding: 1rem 1.5rem;
+      background: #f0f9ff;
+      border-radius: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .portal-cta a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .portal-cta a:hover {
+      color: #1e40af;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #1f2937;
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-text {
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      .splash-card {
-        padding: 2rem 1.5rem;
-      }
-      
-      .splash-title {
+      .section-title {
         font-size: 2rem;
       }
-      
-      .splash-icon {
-        width: 80px;
-        height: 80px;
-        font-size: 2.5rem;
+
+      .features-grid,
+      .portals-grid {
+        gap: 1.5rem;
       }
     }
   </style>
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-  <div class="splash-container">
-    <div class="splash-card">
-      <div class="splash-icon">
-        💻
-      </div>
-      
-      <h1 class="splash-title">CBT Pro System</h1>
-      <p class="splash-subtitle">Computer-Based Testing Platform</p>
-      
-      <p class="splash-description">
-        This system enables examinations to be conducted electronically in a secure, efficient, 
-        and standardized manner. It supports candidate authentication, controlled exam sessions, 
-        automated timing, and digital assessment to ensure fairness, accuracy, and transparency 
-        in the examination process.
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <a href="#" class="logo">
+        <span>💻</span>
+        <span>CBT Pro</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#portals">Portals</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>CBT Pro System</h1>
+      <p>Secure, Efficient & Transparent Computer-Based Testing Platform</p>
+      <p style="font-size: 1rem; margin-bottom: 2.5rem; opacity: 0.85;">
+        Conduct examinations electronically with advanced security, automated timing, and digital assessment
       </p>
-      
-      <div class="portal-label">Choose Portal</div>
-      
-      <div class="splash-buttons">
-        <a href="candidate/home/index.html" class="btn btn-primary btn-lg">
-          <i data-lucide="user" style="width: 20px; height: 20px;"></i>
-          Candidate Portal - Take Exam
+      <div class="hero-buttons">
+        <a href="candidate/home/index.html" class="btn btn-primary">
+          <span>👤</span>
+          Take Exam as Candidate
         </a>
-        
-        <a href="admin/login/index.html" class="btn btn-outline btn-lg">
-          <i data-lucide="shield" style="width: 20px; height: 20px;"></i>
-          Admin Portal - Manage System
+        <a href="admin/login/index.html" class="btn btn-secondary">
+          <span>🛡️</span>
+          Admin Portal
         </a>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section id="features" class="features">
+    <h2 class="section-title">Why Choose CBT Pro?</h2>
+    <p class="section-subtitle">A comprehensive platform designed for modern examination needs</p>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Secure & Safe</h3>
+        <p>Enterprise-grade security ensures exam integrity with candidate authentication and controlled sessions</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">⏱️</div>
+        <h3>Automated Timing</h3>
+        <p>Precise exam timing with automatic session management to ensure fairness across all candidates</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Digital Assessment</h3>
+        <p>Advanced evaluation system with instant scoring and comprehensive analytics</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">✅</div>
+        <h3>Accuracy & Fairness</h3>
+        <p>Standardized examination process ensuring transparent and unbiased assessment for all</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h3>Responsive Design</h3>
+        <p>Seamless experience across desktop, tablet, and mobile devices</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">💼</div>
+        <h3>Full Management</h3>
+        <p>Complete administrative control over exams, candidates, results, and reports</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="how-it-works">
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-subtitle">Simple steps to manage and take exams</p>
+    
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Candidate Registration</h3>
+        <p>Candidates create secure accounts and complete their profiles before exam day</p>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Admin Setup</h3>
+        <p>Administrators create exams, manage questions, and configure exam settings</p>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Take Exam</h3>
+        <p>Candidates log in, receive exam instructions, and complete the assessment</p>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>View Results</h3>
+        <p>Instant scoring, detailed analytics, and comprehensive review of performance</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTALS SECTION -->
+  <section id="portals" class="portals">
+    <h2 class="section-title">Choose Your Portal</h2>
+    <p class="section-subtitle">Select the appropriate portal based on your role</p>
+    
+    <div class="portals-grid">
+      <!-- Candidate Portal -->
+      <div class="portal-card">
+        <div class="portal-header">
+          <div class="icon">👤</div>
+          <h2>Candidate Portal</h2>
+          <p>Take your examinations online</p>
+        </div>
+        <div class="portal-body">
+          <ul>
+            <li>Create your account</li>
+            <li>View available exams</li>
+            <li>Take exams with timer</li>
+            <li>Submit answers securely</li>
+            <li>Check instant results</li>
+            <li>Review performance</li>
+          </ul>
+          <div class="portal-cta">
+            <a href="candidate/home/index.html">
+              Enter Candidate Portal
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Admin Portal -->
+      <div class="portal-card">
+        <div class="portal-header">
+          <div class="icon">🛡️</div>
+          <h2>Admin Portal</h2>
+          <p>Manage the examination system</p>
+        </div>
+        <div class="portal-body">
+          <ul>
+            <li>Create & manage exams</li>
+            <li>Add & edit questions</li>
+            <li>Manage candidates</li>
+            <li>Monitor live exams</li>
+            <li>Review all results</li>
+            <li>Generate reports</li>
+          </ul>
+          <div class="portal-cta">
+            <a href="admin/login/index.html">
+              Enter Admin Portal
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <p class="footer-text">© 2026 CBT Pro System. All rights reserved.</p>
+      <p class="footer-text">A comprehensive computer-based testing platform for secure and transparent examinations</p>
+    </div>
+  </footer>
 
   <script>
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
     // Initialize Lucide icons
     lucide.createIcons();
   </script>
