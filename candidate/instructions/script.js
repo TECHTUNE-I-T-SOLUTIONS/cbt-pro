@@ -11,7 +11,7 @@ if (!session || !session.candidateId) {
 }
 
 function loadInstructions() {
-  // Get exam details
+  // Get exam details from local storage
   const exam = getExamById(session.examId);
   
   if (!exam) {
@@ -20,31 +20,32 @@ function loadInstructions() {
   }
   
   // Update exam details
-  document.getElementById('examName').textContent = exam.name;
-  document.getElementById('duration').textContent = `${exam.duration} minutes`;
-  document.getElementById('totalQuestions').textContent = exam.totalQuestions;
-  document.getElementById('passingScore').textContent = `${exam.passingScore}%`;
+  document.getElementById('durationText').textContent = `Total Time: ${exam.duration} Minutes`;
+  document.getElementById('totalQuestionsText').textContent = exam.totalQuestions;
+  document.getElementById('totalMarksText').textContent = exam.totalQuestions;
+  document.getElementById('passingScoreText').textContent = `${exam.passingScore}%`;
   
-  // Load instructions
-  const instructionsList = document.getElementById('instructionsList');
-  instructionsList.innerHTML = '';
-  
-  exam.instructions.forEach(instruction => {
-    const li = document.createElement('li');
-    li.textContent = instruction;
-    instructionsList.appendChild(li);
-  });
+  // Update instructions list
+  const instructionsList = document.getElementById('generalInstructions');
+  if (exam.instructions && exam.instructions.length > 0) {
+    instructionsList.innerHTML = '';
+    exam.instructions.forEach(instruction => {
+      const li = document.createElement('li');
+      li.textContent = instruction;
+      instructionsList.appendChild(li);
+    });
+  }
 }
 
 // Enable begin button when terms are accepted
-document.getElementById('acceptTerms').addEventListener('change', function() {
-  const beginBtn = document.getElementById('beginBtn');
-  beginBtn.disabled = !this.checked;
+document.getElementById('termsCheckbox').addEventListener('change', function() {
+  const startBtn = document.getElementById('startBtn');
+  startBtn.disabled = !this.checked;
 });
 
-// Begin exam
-document.getElementById('beginBtn').addEventListener('click', function() {
-  // Initialize exam session
+// Begin exam - navigate to profile page
+document.getElementById('startBtn').addEventListener('click', function() {
+  // Initialize exam session data
   session.startTime = Date.now();
   session.answers = {};
   session.markedForReview = [];

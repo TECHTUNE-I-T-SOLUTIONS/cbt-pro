@@ -1,164 +1,165 @@
-/* Instructions Page Styles */
+/* Instructions Page Styles - Humanized CBT Design */
 
-.instructions-container {
-  min-height: 100vh;
-  padding: var(--spacing-2xl) 0;
-  background: var(--color-gray-50);
+:root {
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #0b6bd6;
+  --success: #28a745;
+  --warning: #ffc107;
+  --radius: 12px;
 }
 
-.instructions-card {
-  max-width: 900px;
-  margin: 0 auto;
+* {
+  box-sizing: border-box;
 }
 
-.exam-badge {
-  background: var(--color-primary-light);
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg), #eef3fb 60%);
+  color: #263238;
+  padding: 24px;
+  -webkit-font-smoothing: antialiased;
 }
 
-.icon-md {
-  width: 32px;
-  height: 32px;
-  color: var(--color-primary);
-  stroke-width: 2;
+.cbt-container {
+  max-width: 880px;
+  margin: 28px auto;
+  background: var(--card);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(16, 24, 40, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.03);
 }
 
-.icon-sm {
-  width: 20px;
-  height: 20px;
-}
-
-.exam-details {
-  margin-bottom: var(--spacing-2xl);
-}
-
-.detail-card {
+.header-logo {
   text-align: center;
-  padding: var(--spacing-lg);
-  background: var(--color-gray-50);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-gray-200);
+  margin-bottom: 22px;
 }
 
-.detail-icon {
-  width: 32px;
-  height: 32px;
-  color: var(--color-primary);
-  margin: 0 auto var(--spacing-sm);
-  stroke-width: 1.5;
+.logo {
+  max-width: 140px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
-.detail-label {
-  font-size: var(--font-size-sm);
-  color: var(--color-gray-600);
-  margin-bottom: var(--spacing-xs);
-  font-weight: var(--font-weight-medium);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+.page {
+  display: block;
 }
 
-.detail-value {
-  font-size: var(--font-size-xl);
-  color: var(--color-gray-900);
-  font-weight: var(--font-weight-bold);
+h1 {
+  color: #10202a;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
 }
 
-.instructions-section {
-  margin-bottom: var(--spacing-2xl);
+h2 {
+  color: var(--accent);
+  border-bottom: 2px solid rgba(11, 107, 214, 0.12);
+  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 16px;
+  font-size: 20px;
 }
 
-.instructions-section h3 {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  font-size: var(--font-size-lg);
-  color: var(--color-gray-900);
-  margin-bottom: var(--spacing-lg);
-  padding-bottom: var(--spacing-md);
-  border-bottom: 2px solid var(--color-gray-200);
+h3 {
+  color: #10202a;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 12px;
 }
 
-.instructions-list {
-  list-style: none;
-  counter-reset: instruction-counter;
-  padding: 0;
+.instructions-content {
+  line-height: 1.8;
 }
 
-.instructions-list li {
-  counter-increment: instruction-counter;
-  padding: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
-  background: var(--color-gray-50);
-  border-left: 4px solid var(--color-primary);
-  border-radius: var(--radius-md);
-  position: relative;
-  padding-left: 3.5rem;
+.instruction-section {
+  background: linear-gradient(180deg, #fbfdff, #f7fbff);
+  padding: 16px;
+  margin: 12px 0;
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
 }
 
-.instructions-list li::before {
-  content: counter(instruction-counter);
-  position: absolute;
-  left: var(--spacing-md);
-  top: 50%;
-  transform: translateY(-50%);
-  width: 32px;
-  height: 32px;
-  background: var(--color-primary);
-  color: var(--color-white);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-sm);
+.instruction-section p {
+  margin: 8px 0;
+  color: #333;
+}
+
+.instruction-section ul {
+  margin: 12px 0;
+  padding-left: 20px;
+}
+
+.instruction-section li {
+  margin: 8px 0;
+  color: #333;
 }
 
 .terms-section {
-  padding: var(--spacing-lg);
-  background: var(--color-warning-light);
-  border: 2px solid var(--color-warning);
-  border-radius: var(--radius-md);
-  margin-bottom: var(--spacing-xl);
+  background: #fffaf0;
+  padding: 18px;
+  margin: 22px 0;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 193, 7, 0.12);
 }
 
-.terms-section label {
-  cursor: pointer;
+.checkbox-label {
   display: flex;
-  align-items: flex-start;
-  gap: var(--spacing-md);
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
 }
 
-.terms-section input[type="checkbox"] {
-  flex-shrink: 0;
-  margin-top: 2px;
+.checkbox-label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+  cursor: pointer;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .instructions-container {
-    padding: var(--spacing-lg) 0;
+.start-button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 18px;
+  box-shadow: 0 6px 18px rgba(11, 107, 214, 0.12);
+  transition: transform 0.12s ease;
+}
+
+.start-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(0.98);
+}
+
+.start-button:disabled {
+  background: #e6e8ec;
+  color: #8a8f98;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+@media (max-width: 720px) {
+  .cbt-container {
+    margin: 18px;
+    padding: 18px;
   }
-  
-  .exam-badge {
-    width: 48px;
-    height: 48px;
+
+  h1 {
+    font-size: 24px;
   }
-  
-  .icon-md {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .detail-card {
-    padding: var(--spacing-md);
-  }
-  
-  .detail-value {
-    font-size: var(--font-size-lg);
+
+  .instruction-section {
+    padding: 14px;
   }
 }
