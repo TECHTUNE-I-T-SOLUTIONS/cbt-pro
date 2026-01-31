@@ -249,6 +249,4 @@ This project is for educational and demonstration purposes.
 
 ---
 
-**Built with ❤️ for education and assessment**
-
 For questions or support, refer to the inline code comments and documentation.
