@@ -7,98 +7,69 @@
   <link rel="stylesheet" href="../../shared/css/variables.css">
   <link rel="stylesheet" href="../../shared/css/common.css">
   <link rel="stylesheet" href="styles.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-  <div class="profile-container">
-    <div class="container">
-      <div class="profile-card card">
-        <!-- Header -->
-        <div class="card-header">
-          <h1 class="card-title">
-            <i data-lucide="user-check" class="icon-sm"></i>
-            Confirm Your Identity
-          </h1>
-          <p class="card-description">Please verify your details before proceeding to the exam</p>
+  <div class="cbt-container">
+    <!-- Logo Header -->
+    <div class="header-logo">
+      <img src="../../assets/unilorin .jpeg" alt="University of Ilorin Logo" class="logo">
+    </div>
+    
+    <!-- Candidate Profile Page -->
+    <div class="page">
+      <div class="page-header">
+        <button id="backBtn" class="back-button">← Back</button>
+        <h1>Candidate Profile Verification</h1>
+      </div>
+      <div class="profile-container">
+        <p class="profile-instruction">Please confirm your identity before starting the exam. All information will be locked and cannot be changed once verified.</p>
+        
+        <!-- Profile Summary Display -->
+        <div id="profileSummary" class="profile-summary">
+          <h3>Your Profile Information</h3>
+          <div class="summary-item">
+            <span class="summary-label">Name:</span>
+            <span class="summary-value" id="summaryName">-</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Exam Number:</span>
+            <span class="summary-value" id="summaryExamNumber">-</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Exam Name:</span>
+            <span class="summary-value" id="summaryExamName">-</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Duration:</span>
+            <span class="summary-value" id="summaryDuration">-</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Total Questions:</span>
+            <span class="summary-value" id="summaryTotalQuestions">-</span>
+          </div>
+          <div class="summary-item">
+            <span class="summary-label">Date:</span>
+            <span class="summary-value" id="summaryDate">-</span>
+          </div>
         </div>
         
-        <!-- Profile Details -->
-        <div class="profile-details">
-          <div class="profile-avatar">
-            <i data-lucide="user" class="avatar-icon"></i>
-          </div>
-          
-          <div class="details-grid">
-            <div class="detail-item">
-              <div class="detail-label">
-                <i data-lucide="user" class="icon-xs"></i>
-                Candidate Name
-              </div>
-              <div class="detail-value" id="candidateName">-</div>
-            </div>
-            
-            <div class="detail-item">
-              <div class="detail-label">
-                <i data-lucide="hash" class="icon-xs"></i>
-                Exam Number
-              </div>
-              <div class="detail-value" id="examNumber">-</div>
-            </div>
-            
-            <div class="detail-item">
-              <div class="detail-label">
-                <i data-lucide="book-open" class="icon-xs"></i>
-                Exam Name
-              </div>
-              <div class="detail-value" id="examName">-</div>
-            </div>
-            
-            <div class="detail-item">
-              <div class="detail-label">
-                <i data-lucide="calendar" class="icon-xs"></i>
-                Date
-              </div>
-              <div class="detail-value" id="examDate">-</div>
-            </div>
-            
-            <div class="detail-item">
-              <div class="detail-label">
-                <i data-lucide="clock" class="icon-xs"></i>
-                Duration
-              </div>
-              <div class="detail-value" id="duration">-</div>
-            </div>
-            
-            <div class="detail-item">
-              <div class="detail-label">
-                <i data-lucide="list" class="icon-xs"></i>
-                Total Questions
-              </div>
-              <div class="detail-value" id="totalQuestions">-</div>
-            </div>
-          </div>
+        <!-- Confirmation Section -->
+        <div class="confirmation-section">
+          <label class="checkbox-label">
+            <input type="checkbox" id="profileConfirm">
+            <span>I confirm that the information above is correct and complete</span>
+          </label>
         </div>
         
         <!-- Warning Box -->
         <div class="warning-box">
-          <i data-lucide="alert-circle" class="icon-sm"></i>
-          <div>
-            <strong>Important:</strong> Once you proceed, the exam timer will start. 
-            Ensure you have a stable internet connection and won't be interrupted.
-          </div>
+          <strong>Important:</strong> Once you start the exam, the timer will begin. Make sure you have a stable internet connection and won't be interrupted.
         </div>
         
         <!-- Action Buttons -->
-        <div class="flex-between gap-md">
-          <button class="btn btn-secondary" onclick="history.back()">
-            <i data-lucide="arrow-left" class="icon-sm"></i>
-            Back
-          </button>
-          
-          <button id="proceedBtn" class="btn btn-success btn-lg">
-            <i data-lucide="arrow-right" class="icon-sm"></i>
-            Confirm & Start Exam
-          </button>
+        <div class="profile-buttons">
+          <button id="editProfileBtn" class="button-secondary">← Back</button>
+          <button id="startExamBtn" class="button-primary" disabled>Start Exam</button>
         </div>
       </div>
     </div>
@@ -107,8 +78,5 @@
   <script src="../../shared/js/storage.js"></script>
   <script src="../../shared/js/utils.js"></script>
   <script src="script.js"></script>
-  <script>
-    lucide.createIcons();
-  </script>
 </body>
 </html>
